@@ -25,18 +25,31 @@ func main() {
 }
 
 func arrayProduct(arr []int) []int {
-	if len(arr) < 2 {
+	arrLen := len(arr)
+
+	if arrLen < 2 {
 		usage()
 	}
 
-	total := 1
-	for _, n := range arr {
-		total *= n
+	result := make([]int, arrLen)
+	left := make([]int, arrLen)
+	right := make([]int, arrLen)
+
+	// construct left[] where each element at i is a product of all elements to the left of i
+	left[0] = 1
+	for i := 1; i < arrLen; i++ {
+		left[i] = left[i-1] * arr[i-1]
 	}
 
-	result := make([]int, len(arr))
-	for i, n := range arr {
-		result[i] = total / n
+	// construct right[]  where each element at i is a product of all elements to the right of i
+	right[arrLen-1] = 1
+	for i := arrLen - 2; i >= 0; i-- {
+		right[i] = right[i+1] * arr[i+1]
+	}
+
+	// generate result by combining left[] and right[]
+	for i := 0; i < arrLen; i++ {
+		result[i] = left[i] * right[i]
 	}
 
 	return result

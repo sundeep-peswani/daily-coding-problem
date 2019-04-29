@@ -9,6 +9,7 @@ func TestArrayProduct(t *testing.T) {
 	}{
 		{[]int{1, 2, 3, 4, 5}, []int{120, 60, 40, 30, 24}},
 		{[]int{3, 2, 1}, []int{2, 3, 6}},
+		{[]int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, []int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}},
 	}
 
 	for i, table := range tables {
