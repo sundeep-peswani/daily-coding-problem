@@ -1,0 +1,3 @@
+This problem was asked by Facebook.
+
+Suppose you are given two lists of `n` points, one list p<sub>1</sub>, p<sub>2</sub>, ..., p<sub>n</sub> on the line y = 0 and the other list q<sub>1</sub>, q<sub>2</sub>, ..., q<sub>n</sub> on the line y = 1. Imagine a set of `n` line segments connecting each point p<sub>i</sub> to q<sub>i</sub>. Write an algorithm to determine how many pairs of the line segments intersect.
